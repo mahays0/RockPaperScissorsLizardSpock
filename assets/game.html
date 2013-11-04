@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+// global var to be imported by addJavascriptInterface:
+// var client={};
+//var playerName=prompt("What is your name?");
+var players=[];
+var scores=[];
+var moves=[];
+function setPlayers(newplayers){
+	players=newplayers;
+	document.getElementById("players").innerHTML=players.join(",");
+}
+function setPlayerMoves(newmoves){
+	moves=newmoves;
+	document.getElementById("moves").innerHTML=moves.join(",");
+}
+function setScoreByPlayerID(id,score){
+	scores[id]=score;
+	document.getElementById("scores").innerHTML=scores.join(",");
+}
+function displayWinner(id){
+	document.getElementById("winner").innerHTML=players[id]+" won!";
+}
+function handleOnChange(){
+	var select=document.getElementById("selection");
+	var value=select.options[select.selectedIndex].value;
+	if(value){
+		client.sendMove(value);
+	}
+}
+</script>
+</head>
+<body>
+This is the game.html.
+<h1 id="winner"></h1>
+<div id="players"></div>
+<div id="scores"></div>
+<div id="moves"></div>
+<select id="selection" onchange="handleOnChange()">
+	<option value="" selected>---</option>
+	<option value="rock">Rock</option>
+	<option value="paper">Paper</option>
+	<option value="scissors">Scissors</option>
+	<option value="lizard">Lizard</option>
+	<option value="spock">Spock</option>
+</body>
+</html>

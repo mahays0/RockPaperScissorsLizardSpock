@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">rockpaperscissorslizardspock</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_new_game">NewGame</string>
+    <string name="title_activity_join_game">JoinGame</string>
+    <string name="title_activity_game">Game</string>
+
+</resources>
